@@ -1,4 +1,6 @@
-﻿namespace CSharp_OOP
+﻿using System.Threading.Channels;
+
+namespace CSharp_OOP
 {
     internal class Program
     {
@@ -20,16 +22,16 @@
             private string name;
             private string classnum;
 
-           /* public void Setid(int id)
-            {
-                this.id = ;
-            }
-            public void Setnum(int number) 
-            { 
-            this.number = number;
-            }*/
-           //propirty
-            public int Id
+            /* public void Setid(int id)
+             {
+                 this.id = ;
+             }
+             public void Setnum(int number) 
+             { 
+             this.number = number;
+             }*/
+            //propirty
+           /* public int Id
             {
                 set { this.id = value; }
                 get { return this.id; }
@@ -48,6 +50,42 @@
             {
                 set { this.classnum = value; }
                 get { return this.classnum; }
+            }*/
+                
+            //create a consturctor which take a parmeters and make overloading
+            public Students(int i ,int n ,string N , string c)
+            {
+                id = i;
+                number = n;
+                name = N;
+                classnum = c;
+
+            }  //frist
+            public Students(int i, int n, string N)
+            {
+                id = i;
+                number = n;
+                name = N;
+               
+
+            } //dif sign
+            public Students(int i, int n)
+            {
+                id = i;
+                number = n;
+              
+
+            }
+            public Students(int i)
+            {
+                id = i;
+             
+
+            }
+            public Students()
+            {
+           
+
             }
 
             public void Display()
@@ -65,7 +103,8 @@
 
         static void Main(string[] args)
         {
-            Students s1 = new Students();
+            int x =int.Parse(Console.ReadLine());
+            Students s1 = new Students(x);
       
 
             s1.Display();
